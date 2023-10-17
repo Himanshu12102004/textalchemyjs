@@ -10,9 +10,6 @@ textalchemyjs is a frontend JavaScript library for creating text animation effec
 
 - **Simple Integration:** Seamless integration into your web projects with a straightforward API.
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 ## How to use
 
 **In react project:**
