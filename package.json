@@ -1,0 +1,28 @@
+{
+  "name": "textalchemyjs",
+  "version": "1.0.0",
+  "description": "Text animations",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himanshu12102004/textalchemyjs.git"
+  },
+  "keywords": [
+    "animation",
+    "text",
+    "reveal"
+  ],
+  "author": "himanshu_gupta <himanshu12102004@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Himanshu12102004/textalchemyjs/issues"
+  },
+  "homepage": "https://github.com/Himanshu12102004/textalchemyjs#readme",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
