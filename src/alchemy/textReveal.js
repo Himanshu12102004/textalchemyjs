@@ -12,6 +12,7 @@ class TextReveal {
   #wordInfo;
   #wordTracker;
   #presentWord;
+  #stop;
   constructor(domElement, words, { stepCount, visibleTime, stepDelay, loop }) {
     this.domElement = domElement;
     this.words = words;
@@ -29,9 +30,14 @@ class TextReveal {
     });
     this.#wordTracker = 0;
     this.#presentWord = [...this.#wordInfo[0]];
+    this.#stop = false;
   }
   animate() {
     this.#animateWordsNesting();
+    this.#stop = false;
+  }
+  stopAnimation() {
+    this.#stop = true;
   }
   #animateWordsNesting() {
     this.#animateWord();
@@ -40,7 +46,7 @@ class TextReveal {
     let i = 1;
     let arrangedTill = 0;
 
-    const intervalId = setInterval(() => {
+    let intervalId = setInterval(() => {
       if (
         this.#wordTracker == 0 ||
         this.#presentWord.length ===
@@ -61,10 +67,11 @@ class TextReveal {
 
           setTimeout(() => {
             this.#wordTracker++;
-            if (this.options.loop == true) this.#animateWordsNesting();
-            else if (this.#wordInfo.length >= this.#wordTracker + 1)
+            if (this.options.loop == true && this.#stop === false)
               this.#animateWordsNesting();
-
+            else if (this.#wordInfo.length >= this.#wordTracker + 1) {
+              this.#animateWordsNesting();
+            }
             if (this.words.length == this.#wordTracker) {
               arrangedTill = 0;
             }
